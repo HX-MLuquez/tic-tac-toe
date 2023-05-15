@@ -114,87 +114,87 @@ def moveIO():
 def moveToWin():
     # print("in to moveToWin", board)
     if board["1"] == "O" and board["2"] == "O" and board["3"] != "X":
-        print('1')
+        # print('1')
         board["3"] = "O"
         board["win_O"] = True
     elif board["2"] == "O" and board["3"] == "O" and board["1"] != "X":
-        print('2')
+        # print('2')
         board["1"] = "O"
         board["win_O"] = True
     elif board["1"] == "O" and board["3"] == "O" and board["2"] != "X":
-        print('3')
+        # print('3')
         board["2"] = "O"
         board["win_O"] = True
     elif board["7"] == "O" and board["8"] == "O" and board["9"] != "X":
-        print('4')
+        # print('4')
         board["9"] = "O"
         board["win_O"] = True
     elif board["8"] == "O" and board["9"] == "O" and board["7"] != "X":
-        print('5')
+        # print('5')
         board["7"] = "O"
         board["win_O"] = True
     elif board["7"] == "O" and board["9"] == "O" and board["8"] != "X":
-        print('6')
+        # print('6')
         board["8"] = "O"
         board["win_O"] = True
     elif board["1"] == "O" and board["4"] == "O" and board["7"] != "X":
-        print('7')
+        # print('7')
         board["7"] = "O"
         board["win_O"] = True
     elif board["4"] == "O" and board["7"] == "O" and board["1"] != "X":
-        print('8')
+        # print('8')
         board["1"] = "O"
         board["win_O"] = True
     elif board["1"] == "O" and board["7"] == "O" and board["4"] != "X":
-        print('9')
+        # print('9')
         board["4"] = "O"
         board["win_O"] = True
     elif board["3"] == "O" and board["6"] == "O" and board["9"] != "X":
-        print('10')
+        # print('10')
         board["9"] = "O"
         board["win_O"] = True
     elif board["6"] == "O" and board["9"] == "O" and board["3"] != "X":
-        print('11')
+        # print('11')
         board["3"] = "O"
         board["win_O"] = True
     elif board["3"] == "O" and board["9"] == "O" and board["6"] != "X":
-        print('12')
+        # print('12')
         board["6"] = "O"
         board["win_O"] = True
     elif board["1"] == "O" and board["5"] == "O" and board["9"] != "X":
-        print('13')
+        # print('13')
         board["9"] = "O"
         board["win_O"] = True
     elif board["5"] == "O" and board["9"] == "O" and board["1"] != "X":
-        print('14')
+        # print('14')
         board["1"] = "O"
         board["win_O"] = True
     elif board["1"] == "O" and board["9"] == "O" and board["5"] != "X":
-        print('15')
+        # print('15')
         board["5"] = "O"
         board["win_O"] = True
     elif board["3"] == "O" and board["5"] == "O" and board["7"] != "X":
-        print('16')
+        # print('16')
         board["7"] = "O"
         board["win_O"] = True
     elif board["5"] == "O" and board["7"] == "O" and board["3"] != "X":
-        print('17')
+        # print('17')
         board["3"] = "O"
         board["win_O"] = True
     elif board["3"] == "O" and board["7"] == "O" and board["5"] != "X":
-        print('18')
+        # print('18')
         board["5"] = "O"
         board["win_O"] = True
     elif board["5"] == "O" and board["6"] == "O" and board["4"] != "X":
-        print('19')
+        # print('19')
         board["4"] = "O"
         board["win_O"] = True
     elif board["4"] == "O" and board["6"] == "O" and board["5"] != "X":
-        print('20')
+        # print('20')
         board["5"] = "O"
         board["win_O"] = True
     elif board["4"] == "O" and board["5"] == "O" and board["6"] != "X":
-        print('21')
+        # print('21')
         board["6"] = "O"
         board["win_O"] = True
 
