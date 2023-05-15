@@ -112,7 +112,7 @@ def moveIO():
     return
 
 def moveToWin():
-    print("in to win", board)
+    # print("in to moveToWin", board)
     if board["1"] == "O" and board["2"] == "O" and board["3"] != "X":
         print('1')
         board["3"] = "O"
