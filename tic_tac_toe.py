@@ -59,19 +59,17 @@ def moveIO():
             # print(f'---___---> {board}')
         else:
             next_move = 10 - int(board["prev_move"])
-            if board[str(next_move)] == "O":
+            if board["1"] == "X" and board["7"] == "X" and board["4"] == "4":
+                board["4"] = "O"
+            elif board["3"] == "X" and board["9"] == "X" and board["6"] == "6":
+                board["6"] = "O"
+            elif board[str(next_move)] == "O":
                 if board["prev_move"] == "7" or board["prev_move"] == "1":
-                     if board["1"] == "X" and board["7"] == "X" and board["4"] == "4":
-                        board["4"] = "O"
-                     else:
-                        next_move = int(board["prev_move"]) + 2
-                        board[str(next_move)] = "O" 
+                    next_move = int(board["prev_move"]) + 2
+                    board[str(next_move)] = "O" 
                 else:
-                    if board["3"] == "X" and board["9"] == "X" and board["6"] == "6":
-                        board["6"] = "O"
-                    else:
-                        next_move = int(board["prev_move"]) - 2
-                        board[str(next_move)] = "O"
+                    next_move = int(board["prev_move"]) - 2
+                    board[str(next_move)] = "O"
             else:
                 board[str(next_move)] = "O"   
     else:
