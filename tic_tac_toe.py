@@ -194,20 +194,23 @@ def move():
     # print(f'----> {board}')
     if board[motion] == "X" or board[motion] == "O":
         print(f'ERROR: wrong move')
+        return False
     else:
         board[motion] = "X"
+        return True
 
 def game():
     while not board["win_O"] and not board["win_X"] and board["max_move"]>0 :
         viewBoard()
-        move()
-        moveToWin()
-        if board["win_O"]:
-            result = win()
-            print(f'{result}')
-            return result
-        moveIO()
-        board["max_move"] = board["max_move"] - 2
+        moveTrue = move()
+        if moveTrue:
+            moveToWin()
+            if board["win_O"]:
+                result = win()
+                print(f'{result}')
+                return result
+            moveIO()
+            board["max_move"] = board["max_move"] - 2
     print(f"""
             GAME OVER
            We have tied 
