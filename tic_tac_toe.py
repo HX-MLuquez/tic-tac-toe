@@ -37,10 +37,10 @@ def viewBoard():
     """)
 
 def win():
-    if (board["1"] == "X" and board["5"] == "X" and board["9"] == "X") or (board["3"] == "X" and board["5"] == "X" and board["7"] == "X") or (board["1"] == "X" and board["2"] == "X" and board["3"] == "X") or (board["7"] == "X" and board["8"] == "X" and board["9"] == "X") or (board["1"] == "X" and board["4"] == "X" and board["7"] == "X") or (board["3"] == "X" and board["6"] == "X" and board["9"] == "X") or (board["4"] == "X" and board["5"] == "X" and board["6"] == "X"):
+    if (board["1"] == "X" and board["5"] == "X" and board["9"] == "X") or (board["3"] == "X" and board["5"] == "X" and board["7"] == "X") or (board["1"] == "X" and board["2"] == "X" and board["3"] == "X") or (board["7"] == "X" and board["8"] == "X" and board["9"] == "X") or (board["1"] == "X" and board["4"] == "X" and board["7"] == "X") or (board["3"] == "X" and board["6"] == "X" and board["9"] == "X") or (board["2"] == "X" and board["5"] == "X" and board["8"] == "X") or (board["4"] == "X" and board["5"] == "X" and board["6"] == "X"):
         viewBoard()
         return 'Win player one ("X")'
-    if (board["1"] == "O" and board["5"] == "O" and board["9"] == "O") or (board["3"] == "O" and board["5"] == "O" and board["7"] == "O") or (board["1"] == "O" and board["2"] == "O" and board["3"] == "O") or (board["7"] == "O" and board["8"] == "O" and board["9"] == "O") or (board["1"] == "O" and board["4"] == "O" and board["7"] == "O") or (board["3"] == "O" and board["6"] == "O" and board["9"] == "O") or (board["4"] == "O" and board["5"] == "O" and board["6"] == "O"):
+    if (board["1"] == "O" and board["5"] == "O" and board["9"] == "O") or (board["3"] == "O" and board["5"] == "O" and board["7"] == "O") or (board["1"] == "O" and board["2"] == "O" and board["3"] == "O") or (board["7"] == "O" and board["8"] == "O" and board["9"] == "O") or (board["1"] == "O" and board["4"] == "O" and board["7"] == "O") or (board["3"] == "O" and board["6"] == "O" and board["9"] == "O") or (board["2"] == "O" and board["5"] == "O" and board["8"] == "O") or (board["4"] == "O" and board["5"] == "O" and board["6"] == "O"):
         # print(fin winnnnnnnnn')
         viewBoard()
         return """
@@ -63,6 +63,22 @@ def moveIO():
                 board["4"] = "O"
             elif board["3"] == "X" and board["9"] == "X" and board["6"] == "6":
                 board["6"] = "O"
+            elif board["1"] == "X" and board["2"] == "X" and board["3"] == "3":
+                board["3"] = "O"
+            elif board["3"] == "X" and board["2"] == "X" and board["1"] == "1":
+                board["1"] = "O"
+            elif board["8"] == "X" and board["9"] == "X" and board["7"] == "7":
+                board["7"] = "O"
+            elif board["8"] == "X" and board["7"] == "X" and board["9"] == "9":
+                board["9"] = "O"
+            elif board["6"] == "X" and board["9"] == "X" and board["3"] == "3":
+                board["3"] = "O"
+            elif board["6"] == "X" and board["3"] == "X" and board["9"] == "9":
+                board["9"] = "O"
+            elif board["1"] == "X" and board["3"] == "X" and board["2"] == "2":
+                board["2"] = "O"
+            elif board["9"] == "X" and board["7"] == "X" and board["8"] == "8":
+                board["8"] = "O"
             elif board[str(next_move)] == "O":
                 if board["prev_move"] == "7" or board["prev_move"] == "1":
                     next_move = int(board["prev_move"]) + 2
@@ -111,6 +127,10 @@ def moveIO():
 
 def moveToWin():
     # print("in to moveToWin", board)
+    """
+    Todas las condiciones que resuelven ganar con el lugar "O"->"5" no son necesarios en este modelo
+    ya que si el centro no lo toma el player one lo toma la máquina en el primer movimiento
+    """
     if board["1"] == "O" and board["2"] == "O" and board["3"] != "X":
         # print('1')
         board["3"] = "O"
@@ -194,6 +214,14 @@ def moveToWin():
     elif board["4"] == "O" and board["5"] == "O" and board["6"] != "X":
         # print('21')
         board["6"] = "O"
+        board["win_O"] = True
+    elif board["2"] == "O" and board["5"] == "O" and board["8"] != "X":
+        # print('22')
+        board["8"] = "O"
+        board["win_O"] = True
+    elif board["5"] == "O" and board["8"] == "O" and board["2"] != "X":
+        # print('23')
+        board["2"] = "O"
         board["win_O"] = True
 
 
