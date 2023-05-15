@@ -11,4 +11,15 @@ exportadas que puedan interactuar con el diccionario "board" de mi archivo princ
 
 Si aprecian que algo no funciona correctamente, o que se puede optimizar el code me escriben.
 
+# COMO JUGAR?
+
+Simplemente ejecutan el archivo:
+```bash
+tic_tac_toe.py
+```
+
+En el se encuentra el juego completo (todo el code)
+
+Listo!!!
+
 A disfrutar!!!!!!!!!
