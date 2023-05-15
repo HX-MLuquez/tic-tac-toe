@@ -188,7 +188,7 @@ I challenge you to try to beat me
 
 
 def move():
-    print(f'Player "X" Select place: ')
+    print(f'Player "X" Select your place NUMBER: ')
     motion = input()
     board["prev_move"] = motion
     # print(f'----> {board}')
