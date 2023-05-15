@@ -61,11 +61,17 @@ def moveIO():
             next_move = 10 - int(board["prev_move"])
             if board[str(next_move)] == "O":
                 if board["prev_move"] == "7" or board["prev_move"] == "1":
-                    next_move = int(board["prev_move"]) + 2
-                    board[str(next_move)] = "O" 
+                     if board["1"] == "X" and board["7"] == "X" and board["4"] == "4":
+                        board["4"] = "O"
+                     else:
+                        next_move = int(board["prev_move"]) + 2
+                        board[str(next_move)] = "O" 
                 else:
-                    next_move = int(board["prev_move"]) - 2
-                    board[str(next_move)] = "O"
+                    if board["3"] == "X" and board["9"] == "X" and board["6"] == "6":
+                        board["6"] = "O"
+                    else:
+                        next_move = int(board["prev_move"]) - 2
+                        board[str(next_move)] = "O"
             else:
                 board[str(next_move)] = "O"   
     else:
@@ -178,6 +184,18 @@ def moveToWin():
         if board["5"] != "X":
             board["5"] = "O"
             board["win_O"] = True
+    elif board["5"] == "O" and board["6"] == "O":
+        if board["4"] != "X":
+            board["4"] = "O"
+            board["win_O"] = True
+    elif board["4"] == "O" and board["6"] == "O":
+        if board["5"] != "X":
+            board["5"] = "O"
+            board["win_O"] = True
+    elif board["4"] == "O" and board["5"] == "O":
+        if board["6"] != "X":
+            board["6"] = "O"
+            board["win_O"] = True
 
 
 
@@ -209,7 +227,8 @@ def game():
                 result = win()
                 print(f'{result}')
                 return result
-            moveIO()
+            else:
+                moveIO()
             board["max_move"] = board["max_move"] - 2
     print(f"""
             GAME OVER
